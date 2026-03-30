@@ -10,5 +10,11 @@
     "date": "2026-03-31T03:41:09.5302538+05:30",
     "amount": 200,
     "description": "Lunch"
+  },
+  {
+    "id": 3,
+    "date": "2026-03-31T04:13:04.0097547+05:30",
+    "amount": 200,
+    "description": "Breakfast"
   }
 ]
