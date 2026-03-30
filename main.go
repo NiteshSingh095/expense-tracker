@@ -22,7 +22,7 @@ func main() {
 		addCommand()
 
 	case "list":
-		fmt.Println("List command triggered")
+		listCommand()
 
 	case "delete":
 		fmt.Println("Delete command triggered")
@@ -33,6 +33,28 @@ func main() {
 	default:
 		fmt.Println("Unknown command. Available commands: add, list, delete, summary")
 	}
+}
+
+/// listCommand handles the 'list' command to display all expenses in a formatted manner.
+func listCommand() {
+
+	expenses, err := internal.LoadExpense()
+	if err != nil {
+		fmt.Printf("Error loading expenses: %s\n", err)
+		return
+	}
+
+	if len(expenses) == 0 {
+		fmt.Println("No expenses found.")
+		return
+	}
+
+	fmt.Printf("%-5s %-12s %-15s %-10s\n", "ID", "Date", "Description", "Amount")
+
+	for _, expense := range expenses {
+		fmt.Printf("%-5d %-12s %-15s $%0.2f\n", expense.ID, expense.Date.Format("2006-01-02"), expense.Description, expense.Amount)
+	}
+
 }
 
 /// addCommand handles the 'add' command to add a new expense with amount and description.
