@@ -4,6 +4,8 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"time"
+	"expense-tracker/internal"
 )
 
 func main() {
@@ -47,6 +49,25 @@ func addCommand() {
 		return
 	}
 
-	fmt.Println("Amount:", *amount)
-	fmt.Println("Description:", *description)
+	expenses, err := internal.LoadExpense()
+	if err != nil {
+		fmt.Printf("Error loading expenses: %s\n", err)
+		return
+	}
+
+	newExpense := internal.Expense{
+		ID:          internal.GetNextId(expenses),
+		Date:        time.Now(),
+		Amount:      *amount,
+		Description: *description,
+	}
+
+	expenses = append(expenses, newExpense)
+	err = internal.SaveExpense(expenses)
+	if err != nil {
+		fmt.Printf("Error saving expenses: %s\n", err)
+		return
+	}
+
+	fmt.Println("Expense added successfully!, ID : ", newExpense.ID)
 }
