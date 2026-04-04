@@ -2,19 +2,43 @@
   {
     "id": 1,
     "date": "2026-03-31T03:41:06.1178396+05:30",
-    "amount": 300,
-    "description": "Dinner"
+    "amount": 320,
+    "description": "Dinner",
+    "category": "Food"
   },
   {
     "id": 2,
     "date": "2026-03-31T03:41:09.5302538+05:30",
     "amount": 200,
-    "description": "Lunch"
+    "description": "Lunch",
+    "category": "Food"
   },
   {
     "id": 3,
     "date": "2026-03-31T04:13:04.0097547+05:30",
     "amount": 200,
-    "description": "Breakfast"
+    "description": "Breakfast",
+    "category": "Food"
+  },
+  {
+    "id": 4,
+    "date": "2026-04-04T21:42:11.2372726+05:30",
+    "amount": 5,
+    "description": "Pizza",
+    "category": "general"
+  },
+  {
+    "id": 5,
+    "date": "2026-04-04T22:03:22.7868487+05:30",
+    "amount": 5,
+    "description": "Pencil",
+    "category": "accessories"
+  },
+  {
+    "id": 6,
+    "date": "2026-04-04T22:18:11.5659804+05:30",
+    "amount": 2,
+    "description": "Pen",
+    "category": "Accessories"
   }
 ]
